@@ -17,3 +17,6 @@ Thumbs.db
 
 # Claude
 .claude/
+
+# Altklausur Text-Extraktionen (PDFs sind im Repo)
+*.txt
