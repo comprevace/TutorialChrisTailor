@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'de.uniwue'
+version = '1.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "failed", "skipped"
+        showStandardStreams = true
+    }
+}

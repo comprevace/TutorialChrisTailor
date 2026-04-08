@@ -1,0 +1,19 @@
+# Build output
+build/
+out/
+bin/
+
+# Gradle
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Claude
+.claude/
