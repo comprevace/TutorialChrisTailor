@@ -82,36 +82,122 @@ TutorialChrisTailor/
 └── *.pdf                             4 Altklausuren als Referenz
 ```
 
-## Quick Start
+## Setup: Alles von Null installieren
 
-### Voraussetzungen
+Falls du auf einem frischen Rechner startest -- hier ist alles Schritt fuer Schritt.
 
-- **Java 21** (JDK)
-- **IntelliJ IDEA** (empfohlen) oder beliebige IDE
+### 1. Git installieren
 
-### Zum Ueben (empfohlen!)
+Git wird benoetigt um das Repo herunterzuladen.
 
-```bash
-# 1. Repo klonen
-git clone https://github.com/comprevace/TutorialChrisTailor.git
+**Windows:**
+```powershell
+# Option A: Ueber winget (Windows 10/11, empfohlen)
+winget install Git.Git
 
-# 2. Skeleton-Projekt in IntelliJ oeffnen
-#    File -> Open -> skeleton/ Ordner waehlen -> "Open as Project"
-
-# 3. TODOs in den Java-Dateien implementieren
-
-# 4. Tests ausfuehren (gruener Play-Button oder:)
-./gradlew test
+# Option B: Manuell herunterladen
+# https://git-scm.com/download/win -> Installer ausfuehren
 ```
 
-### Loesung anschauen
+**Mac:**
+```bash
+# Ueber Homebrew
+brew install git
+
+# Oder: Xcode Command Line Tools (wird automatisch gefragt beim ersten git-Aufruf)
+xcode-select --install
+```
+
+**Linux (Ubuntu/Debian):**
+```bash
+sudo apt update && sudo apt install git
+```
+
+Nach der Installation Terminal/PowerShell **neu oeffnen** und pruefen:
+```bash
+git --version
+# -> git version 2.x.x
+```
+
+### 2. Java 21 (JDK) installieren
+
+**Windows:**
+```powershell
+winget install EclipseAdoptium.Temurin.21.JDK
+```
+
+**Mac:**
+```bash
+brew install --cask temurin@21
+```
+
+**Linux:**
+```bash
+sudo apt install temurin-21-jdk
+# Oder: https://adoptium.net/de/ -> Installer herunterladen
+```
+
+Pruefen:
+```bash
+java --version
+# -> openjdk 21.x.x
+```
+
+### 3. IntelliJ IDEA installieren
+
+**Alle Plattformen:**
+- Gehe zu https://www.jetbrains.com/idea/download/
+- **Community Edition** (kostenlos) reicht voellig aus
+- Installer ausfuehren, Standardeinstellungen beibehalten
+
+Oder per winget (Windows):
+```powershell
+winget install JetBrains.IntelliJIDEA.Community
+```
+
+### 4. Dieses Tutorial herunterladen
 
 ```bash
-# Hauptprojekt in IntelliJ oeffnen
-# File -> Open -> TutorialChrisTailor/ Ordner -> "Open as Project"
+# Terminal / PowerShell oeffnen und ausfuehren:
+git clone https://github.com/comprevace/TutorialChrisTailor.git
+```
 
-# Tests ausfuehren
-./gradlew test
+Das erstellt einen Ordner `TutorialChrisTailor/` mit dem kompletten Projekt.
+
+### 5. In IntelliJ oeffnen
+
+1. IntelliJ starten
+2. **File -> Open**
+3. Zum Ordner `TutorialChrisTailor/skeleton/` navigieren (zum Ueben) oder `TutorialChrisTailor/` (fuer die Loesung)
+4. **"Open as Project"** klicken
+5. Gradle-Import bestaetigen wenn gefragt (IntelliJ erkennt `build.gradle` automatisch)
+6. Warten bis IntelliJ alles indexiert hat (Fortschrittsbalken unten rechts)
+
+### 6. Tests ausfuehren
+
+**In IntelliJ:**
+- Rechtsklick auf `src/test/java` -> **"Run All Tests"**
+- Oder: Einzelne Testklasse oeffnen -> Gruener Play-Button neben der Klasse
+
+**Im Terminal:**
+```bash
+cd TutorialChrisTailor
+./gradlew test          # Mac/Linux
+gradlew.bat test        # Windows
+```
+
+---
+
+## Quick Start (fuer Eilige)
+
+```bash
+# Alles in 4 Befehlen (Windows mit winget):
+winget install Git.Git
+winget install EclipseAdoptium.Temurin.21.JDK
+winget install JetBrains.IntelliJIDEA.Community
+git clone https://github.com/comprevace/TutorialChrisTailor.git
+
+# Dann: IntelliJ -> File -> Open -> skeleton/ Ordner -> Open as Project
 ```
 
 ## Testergebnis
